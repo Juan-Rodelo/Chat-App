@@ -25,23 +25,11 @@ export default class App extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Start"
-        >
-          <Stack.Screen
-            name="Start"
-            component={Start}
-          />
-          <Stack.Screen
-            name="Chat"
-            component={Chat}
-          />
+        <Stack.Navigator initialRouteName="Start">
+          <Stack.Screen name="Start" component={Start} />
+          <Stack.Screen name="Chat" component={Chat} />
         </Stack.Navigator>
       </NavigationContainer>
-
-
-
-
     );
   }
 

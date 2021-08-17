@@ -49,6 +49,10 @@ export default class Start extends React.Component {
             </View>
 
             <TouchableOpacity
+              accessible={true}
+              accessibilityLabel="More options"
+              accessibilityHint="Let’s you choose to send an image or your geolocation."
+              accessibilityRole="button"
               title="Go to Chat"
               style={styles.startButton, { backgroundColor: this.state.backColor }}
               onPress={() => this.props.navigation.navigate('Chat', { name: this.state.name, backColor: this.state.backColor })}
