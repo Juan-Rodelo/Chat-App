@@ -9,7 +9,10 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+//lets you navigate components
 const Stack = createStackNavigator();
+
+
 
 
 export default class App extends React.Component {
