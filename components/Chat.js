@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { View, StyleSheet, Platform, KeyboardAvoidingView, Text } from 'react-native';
 import { GiftedChat, Bubble, SystemMessage, InputToolbar } from 'react-native-gifted-chat'
@@ -53,6 +52,8 @@ export default class Chat extends React.Component {
       },
       isConnected: false,
       image: null,
+      location: null,
+
     }
 
   }
@@ -272,6 +273,29 @@ export default class Chat extends React.Component {
   renderCustomActions = (props) => {
     return <CustomActions {...props} />;
   };
+
+  renderCustomView = (props) => {
+    const { currentMessage } = props;
+    if (currentMessage.location) {
+      return (
+        <MapView
+          style={{
+            width: 150,
+            height: 100,
+            borderRadius: 13,
+            margin: 3
+          }}
+          region={{
+            latitude: currentMessage.location.latitude,
+            longitude: currentMessage.location.longitude,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+        />
+      );
+    }
+    return null;
+  }
 
   // renderCustomActions = (props) =>
   //   <CustomActions {...props} />;

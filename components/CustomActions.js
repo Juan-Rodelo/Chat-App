@@ -79,10 +79,11 @@ export default class CustomActions extends React.Component {
     }
   };
 
-  //Get Location
+
+  //Sends user's location
   getLocation = async () => {
     try {
-      const { status } = await Permissions.askAsync(Permissions.LOCATION_BACKGROUND);
+      const { status } = await Permissions.askAsync(Permissions.LOCATION_BACKGROUND_);
       if (status === "granted") {
         const result = await Location.getCurrentPositionAsync(
           {}
@@ -102,6 +103,7 @@ export default class CustomActions extends React.Component {
       console.log(error.message);
     }
   };
+
 
   //Upload image to firebase
   uploadImageFetch = async (uri) => {
