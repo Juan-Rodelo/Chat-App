@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, StyleSheet, Platform, KeyboardAvoidingView, Text } from 'react-native';
 import { GiftedChat, Bubble, SystemMessage, InputToolbar } from 'react-native-gifted-chat'
+import CustomActions from './CustomActions';
 
 //Custom Chat Features (sharing images and location)
 // import CustomActions from './CustomActions';
@@ -268,6 +269,10 @@ export default class Chat extends React.Component {
     }
   }
 
+  renderCustomActions = (props) => {
+    return <CustomActions {...props} />;
+  };
+
   // renderCustomActions = (props) =>
   //   <CustomActions {...props} />;
 
@@ -286,6 +291,8 @@ export default class Chat extends React.Component {
           onSend={messages => this.onSend(messages)}
           isTyping={true}
           user={this.state.user}
+          renderActions={this.renderCustomActions}
+
 
         />
         {Platform.OS === 'android' ? <KeyboardAvoidingView behavior="height" /> : null}
