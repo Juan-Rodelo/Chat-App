@@ -98,6 +98,7 @@ export default class Chat extends React.Component {
         this.setState({ isConnected: false })
         // Calls messeages from offline storage
         this.getMessages();
+        alert('is offline');
       }
     });
 

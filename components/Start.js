@@ -14,7 +14,7 @@ export default class Start extends React.Component {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ImageBackground
           style={styles.imgBack}
-          source={require('../assets/web.jpeg')}
+          source={require('../assets/web2.jpeg')}
         >
           <View style={styles.mainTitle}>
             <Text style={styles.title}>SpiderChat </Text>
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 45,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#fff',
     textAlign: 'center',
     top: 15,
     height: 60,
